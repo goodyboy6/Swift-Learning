@@ -46,3 +46,24 @@ final class Cat: Pet{
 }
 
 
+//NilLiteralConvertible
+//if a obj is not Optional, it will now allow to be nil. so compiler error when : "var b:String = nil"
+//1)contains value
+var a:String? = "tttttttttttttttt"
+print(a)
+//compiler see this:
+var opt:Optional<String> = Optional.init("tttttttttttttttt")
+print(opt)
+
+//2)nil value
+var b:String? = nil
+print(b)
+//compiler see this:
+//var optb:Optional = Optional(nilLiteral: ())//NilLiteralConvertible Protocol
+//print(optb)
+
+//3)
+print("\(a!)")//compiler will get value from Some(T)
+
+
+

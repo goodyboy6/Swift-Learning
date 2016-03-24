@@ -4,12 +4,16 @@ import UIKit
 
 //WWDC: Building Better Apps with Value Types in Swift
 
-//Comparable Protocol
+/*
+ Comparable,Equatable
+ Hashable
+ */
+
+//Comparable,Equatable
 struct Dog{
     var name:String
     var age:Int
 };
-
 
 extension Dog:Comparable{}
 func <(lhs:Dog, rhs:Dog) -> Bool{
@@ -19,13 +23,13 @@ func ==(lhs:Dog, rhs:Dog) -> Bool{
     return lhs.name == rhs.name && lhs.age == rhs.age
 }
 
-//test Comparable Protocol
 var oldDog = Dog(name: "Jess", age: 12)
 var youngDog = Dog(name: "Telli", age: 5)
 
 oldDog > youngDog
 oldDog >= youngDog
 
+//Hashable
 extension Dog:Hashable{//can be as key of Dictionary
     var hashValue:Int{
         get{
